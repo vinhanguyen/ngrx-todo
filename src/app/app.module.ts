@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { reducers, metaReducers } from './reducers';
         strictStateImmutability: true,
         strictActionImmutability: true
       }
-    })
+    }),
+    EffectsModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]

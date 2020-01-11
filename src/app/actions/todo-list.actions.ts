@@ -16,11 +16,30 @@ export const loadTodosFailure = createAction(
 );
 
 export const createTodo = createAction(
-  '[TodoList] Create Todo',
+  '[TodoList] Create Todo'
+);
+
+export const loadTodo = createAction(
+  '[TodoList] Load Todo',
+  props<{ data: number }>()
+);
+
+export const loadTodoSuccess = createAction(
+  '[TodoList] Load Todo Success',
   props<{ data: Todo }>()
 );
 
-export const createTodoFailure = createAction(
-  '[TodoList] Create Todo Failure',
+export const loadTodoFailure = createAction(
+  '[TodoList] Load Todo Failure',
+  props<{ error: any }>()
+);
+
+export const saveTodo = createAction(
+  '[TodoList] Save Todo',
+  props<{ data: Todo }>()
+);
+
+export const saveTodoFailure = createAction(
+  '[TodoList] Save Todo Failure',
   props<{ error: any }>()
 );

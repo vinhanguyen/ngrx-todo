@@ -8,12 +8,14 @@ export const todoListFeatureKey = 'todoList';
 
 export interface State {
   loading: boolean,
-  todos: Todo[]
+  todos: Todo[],
+  todo: Todo
 }
 
 export const initialState: State = {
   loading: false,
-  todos: []
+  todos: [],
+  todo: null
 };
 
 const todoListReducer = createReducer(
@@ -28,6 +30,20 @@ const todoListReducer = createReducer(
   })),
   on(TodoListActions.loadTodosFailure, state => produce(state, draft => {
     draft.loading = false;
+  })),
+  on(TodoListActions.loadTodo, state => produce(state, draft => {
+    draft.loading = true;
+    draft.todo = null;
+  })),
+  on(TodoListActions.loadTodoSuccess, (state, {data}) => produce(state, draft => {
+    draft.loading = false;
+    draft.todo = data;
+  })),
+  on(TodoListActions.loadTodoFailure, state => produce(state, draft => {
+    draft.loading = false;
+  })),
+  on(TodoListActions.createTodo, state => produce(state, draft => {
+    draft.todo = {name: ''}
   }))
 );
 

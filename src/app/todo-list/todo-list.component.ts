@@ -4,7 +4,6 @@ import { State } from '../reducers';
 import { Observable } from 'rxjs';
 import { Todo } from '../models/todo';
 import * as TodoListActions from '../actions/todo-list.actions';
-import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -16,8 +15,6 @@ export class TodoListComponent implements OnInit {
   loading$: Observable<boolean>;
   todos$: Observable<Todo[]>;
 
-  input = new FormControl('');
-
   constructor(private store: Store<State>, private router: Router) { }
 
   ngOnInit() {
@@ -28,8 +25,13 @@ export class TodoListComponent implements OnInit {
   }
 
   create() {
-    this.store.dispatch(TodoListActions.createTodo({data: {name: this.input.value}}));
-    this.input.reset();
+    this.store.dispatch(TodoListActions.createTodo());
+    this.router.navigateByUrl('/form');
+  }
+
+  edit(todo: Todo) {
+    this.store.dispatch(TodoListActions.loadTodo({data: todo.id}));
+    this.router.navigateByUrl('/form');
   }
 
 }

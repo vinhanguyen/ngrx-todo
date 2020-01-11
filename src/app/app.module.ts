@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,15 +10,17 @@ import { reducers, metaReducers } from './reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoListEffects } from './effects/todo-list.effects';
+import { TodoFormComponent } from './todo-form/todo-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodoListComponent
+    TodoListComponent,
+    TodoFormComponent
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
     StoreModule.forRoot(reducers, {

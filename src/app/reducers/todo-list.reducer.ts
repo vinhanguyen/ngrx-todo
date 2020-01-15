@@ -24,9 +24,9 @@ const todoListReducer = createReducer(
     draft.loading = true;
     draft.todos = [];
   })),
-  on(TodoListActions.loadTodosSuccess, (state, {data}) => produce(state, draft => {
+  on(TodoListActions.loadTodosSuccess, (state, {payload}) => produce(state, draft => {
     draft.loading = false;
-    draft.todos = data;
+    draft.todos = payload;
   })),
   on(TodoListActions.loadTodosFailure, state => produce(state, draft => {
     draft.loading = false;
@@ -35,9 +35,9 @@ const todoListReducer = createReducer(
     draft.loading = true;
     draft.todo = null;
   })),
-  on(TodoListActions.loadTodoSuccess, (state, {data}) => produce(state, draft => {
+  on(TodoListActions.loadTodoSuccess, (state, {payload}) => produce(state, draft => {
     draft.loading = false;
-    draft.todo = data;
+    draft.todo = payload;
   })),
   on(TodoListActions.loadTodoFailure, state => produce(state, draft => {
     draft.loading = false;

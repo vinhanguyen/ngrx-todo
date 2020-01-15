@@ -8,10 +8,10 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-todo-list',
-  templateUrl: './todo-list.component.html',
-  styleUrls: ['./todo-list.component.css']
+  templateUrl: './list-todo.component.html',
+  styleUrls: ['./list-todo.component.css']
 })
-export class TodoListComponent implements OnInit {
+export class ListTodoComponent implements OnInit {
   loading$: Observable<boolean>;
   todos$: Observable<Todo[]>;
 
@@ -26,11 +26,6 @@ export class TodoListComponent implements OnInit {
 
   create() {
     this.store.dispatch(TodoListActions.createTodo());
-    this.router.navigateByUrl('/form');
-  }
-
-  edit(todo: Todo) {
-    this.store.dispatch(TodoListActions.loadTodo({data: todo.id}));
     this.router.navigateByUrl('/form');
   }
 

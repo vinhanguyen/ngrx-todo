@@ -1,0 +1,5 @@
+<p>todos: <span *ngIf="loading$ | async">loading...</span></p>
+<ol>
+    <li *ngFor="let todo of todos$ | async"><a [routerLink]="['/edit', todo.id]">{{todo.name}}</a></li>
+</ol>
+<a routerLink="/create">create</a>

@@ -1,0 +1,6 @@
+<form *ngIf="todo" (ngSubmit)="submit()">
+    <div>
+        <input type="text" name="name" [(ngModel)]="todo.name">
+    </div>
+    <button type="submit">submit</button>
+</form>

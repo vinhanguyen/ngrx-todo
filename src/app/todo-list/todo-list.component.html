@@ -1,5 +1,0 @@
-<p>todos: <span *ngIf="loading$ | async">loading...</span></p>
-<ol>
-    <li *ngFor="let todo of todos$ | async">{{todo.name}} <button (click)="edit(todo)">edit</button></li>
-</ol>
-<button (click)="create()">create</button>

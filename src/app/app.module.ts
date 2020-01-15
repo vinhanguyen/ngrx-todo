@@ -8,15 +8,19 @@ import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
 import { EffectsModule } from '@ngrx/effects';
-import { TodoListComponent } from './todo-list/todo-list.component';
+import { ListTodoComponent } from './list-todo/list-todo.component';
 import { TodoListEffects } from './effects/todo-list.effects';
-import { TodoFormComponent } from './todo-form/todo-form.component';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { RouterEffects } from './effects/router.effects';
+import { EditTodoComponent } from './edit-todo/edit-todo.component';
+import { CreateTodoComponent } from './create-todo/create-todo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodoListComponent,
-    TodoFormComponent
+    ListTodoComponent,
+    EditTodoComponent,
+    CreateTodoComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,8 @@ import { TodoFormComponent } from './todo-form/todo-form.component';
         strictActionImmutability: true
       }
     }),
-    EffectsModule.forRoot([TodoListEffects])
+    EffectsModule.forRoot([TodoListEffects, RouterEffects]),
+    StoreRouterConnectingModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

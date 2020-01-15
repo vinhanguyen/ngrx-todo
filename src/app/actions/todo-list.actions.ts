@@ -7,7 +7,7 @@ export const loadTodos = createAction(
 
 export const loadTodosSuccess = createAction(
   '[TodoList] Load Todos Success',
-  props<{ data: Todo[] }>()
+  props<{ payload: Todo[] }>()
 );
 
 export const loadTodosFailure = createAction(
@@ -21,12 +21,12 @@ export const createTodo = createAction(
 
 export const loadTodo = createAction(
   '[TodoList] Load Todo',
-  props<{ data: number }>()
+  props<{ payload: number }>()
 );
 
 export const loadTodoSuccess = createAction(
   '[TodoList] Load Todo Success',
-  props<{ data: Todo }>()
+  props<{ payload: Todo }>()
 );
 
 export const loadTodoFailure = createAction(
@@ -36,7 +36,7 @@ export const loadTodoFailure = createAction(
 
 export const saveTodo = createAction(
   '[TodoList] Save Todo',
-  props<{ data: Todo }>()
+  props<{ payload: Todo }>()
 );
 
 export const saveTodoFailure = createAction(

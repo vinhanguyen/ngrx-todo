@@ -1,8 +1,6 @@
-<div *ngIf="loading$ | async">loading...</div>
 <form *ngIf="todo" (ngSubmit)="submit()">
     <div>
-        <label>name: </label>
         <input type="text" name="name" [(ngModel)]="todo.name">
     </div>
-    <button type="submit">save</button>
+    <button type="submit">submit</button>
 </form>

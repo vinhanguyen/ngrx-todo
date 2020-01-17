@@ -15,13 +15,19 @@ import { RouterEffects } from './effects/router.effects';
 import { EditTodoComponent } from './edit-todo/edit-todo.component';
 import { CreateTodoComponent } from './create-todo/create-todo.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from '@angular/material/table';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListTodoComponent,
     EditTodoComponent,
-    CreateTodoComponent
+    CreateTodoComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +43,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     }),
     EffectsModule.forRoot([TodoListEffects, RouterEffects]),
     StoreRouterConnectingModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatProgressBarModule,
+    MatToolbarModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

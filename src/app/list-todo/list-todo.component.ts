@@ -15,6 +15,8 @@ export class ListTodoComponent implements OnInit {
   loading$: Observable<boolean>;
   todos$: Observable<Todo[]>;
 
+  columns = ['id', 'name'];
+
   constructor(private store: Store<State>, private router: Router) { }
 
   ngOnInit() {

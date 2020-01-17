@@ -14,13 +14,13 @@ export class TodoListService {
 
   getAll(): Observable<Todo[]> {
     return this.http.get<Todo[]>(`${this.baseUrl}/todos`).pipe(
-      delay(1000)
+      delay(2000)
     );
   }
 
   getById(id: number): Observable<Todo> {
     return this.http.get<Todo>(`${this.baseUrl}/todos/${id}`).pipe(
-      delay(1000)
+      delay(2000)
     );
   }
 

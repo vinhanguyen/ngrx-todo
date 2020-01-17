@@ -1,0 +1,8 @@
+.filler {
+    flex: 1 1 auto;
+}
+
+.title a {
+    color: white;
+    text-decoration: none;
+}

@@ -14,6 +14,7 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { RouterEffects } from './effects/router.effects';
 import { EditTodoComponent } from './edit-todo/edit-todo.component';
 import { CreateTodoComponent } from './create-todo/create-todo.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { CreateTodoComponent } from './create-todo/create-todo.component';
       }
     }),
     EffectsModule.forRoot([TodoListEffects, RouterEffects]),
-    StoreRouterConnectingModule.forRoot()
+    StoreRouterConnectingModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
